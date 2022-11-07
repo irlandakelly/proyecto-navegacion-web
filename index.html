@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Observatorio de Educación Superior</title>
+  </head>
+  <body>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <p class="text">La educación superior es el principal camino para el desarrollo profesional, donde a través de ella existe un fuerte impacto económico, laboral, familiar, social y se incrementa el crecimiento profesional, así como las posibilidades y fuente de empleo, y con ello mejores condiciones de vida, comprobandose una gran diferencia entre lo que la cursan en un año avanzado o lo que se han graduado, en relación con lo que no han accedido a ella.
+        A nivel de zonas de riesgo social, la educación superior cuando se logra elevar en la población se reduce en gran proporción la pobreza y se fortalecen los valores, pues se obtienen herramientas tecnológicas y educativas que lo permiten.
+        <br>Al contar con un título universitario se cambia la proyección del futuro y del presente, pues ha logrado un alto nivel de especialización que le permite entrar a un mercado laboral en constante desarrollo y evolución, donde se decantan a los aspirantes que no lo han alcanzado.
+        
+        <br>Es por estas razones que hemos decidido realizar nuestro proyecto en torno a este tema, pues es necesario conocer los índices de población que actualmente pueden acceder a esta preparación, para así detectar focos rojos donde sea particularmente necesario el tomar acciones concretas para prevenir la deserción escolar y aumentar el número de egresados de educación superior universitaria.
+    </div>
+    
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰ Observatorio de Educación Superior</button>  
+      <h2>Aquí va el mapa.</h2>
+      
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "500px";
+      document.getElementById("main").style.marginLeft = "500px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+       
+    </body>
+</html>
