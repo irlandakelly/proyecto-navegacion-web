@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
     <title>Observatorio de Educación Superior</title>
   </head>
   <body>
@@ -20,7 +26,11 @@
     
     <div id="main">
       <button class="openbtn" onclick="openNav()">☰ Observatorio de Educación Superior</button>  
-      <h2>Aquí va el mapa.</h2>
+      
+      <div id="map">
+        <script src="map.js"></script>
+
+      </div>
       
     </div>
     
