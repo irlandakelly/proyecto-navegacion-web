@@ -56,6 +56,14 @@ body {
 
    
   }
+       
+ #map{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+    
+  }
   
 
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
