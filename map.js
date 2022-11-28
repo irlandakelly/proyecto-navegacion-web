@@ -5,14 +5,14 @@ var map = L.map('map').setView([24.799119, -107.342517], 13);
 var satelite = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 8,
     subdomains:['mt0','mt1','mt2','mt3']
-}).addTo(map)
+})
 
 var hibrido = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-}).addTo(map)
+    maxZoom: 8,
+})
 
 var mapa = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 8,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -147,20 +147,47 @@ var rezagoSoc = L.geoJSON(rezagoSoc, {
     }
 });
 
+// Municipios
+
+function popup(feature, layer) {
+    if (feature.properties && feature.properties.NOM_MUN) {
+        layer.bindTooltip("<h4>" + feature.properties.NOM_MUN+ "</h4>");
+    }
+}
+
+var municipios = L.geoJSON(municipios, {
+    style: function(feature) {
+        return {
+            color: 'black',
+            weight:1,
+            opacity: 1,
+            fillOpacity: 0
+        };
+    },
+    onEachFeature: popup
+}).addTo(map);
+
+
+
 // Arreglo final
 
 var capasAdicionales = {
+    "Municipios":municipios,
     "Universidades Públicas":uniPub,
     "Universidades Privadas":uniPriv,
     "Rezago Educativo":rezagoEdu,
     "Nivel de pobreza":pobreza,
-    "Rezago Social": rezagoSoc,
+    "Rezago Social":rezagoSoc,
 };
 
 var capasBase = {
-    "Híbrido": hibrido,
     "Mapa": mapa,
     "Satélite": satelite,
+    "Híbrido": hibrido,
 };
 
 L.control.layers(capasBase, capasAdicionales).addTo(map);
+
+map.on("overlayadd", function (event) {
+	municipios.bringToFront();
+});
