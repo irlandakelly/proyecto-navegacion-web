@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
      crossorigin=""/>
-     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-     crossorigin=""></script>
-    <title>Observatorio de Educación Superior</title>
-  </head>
-  <body>
+     <link rel=" stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+  <title>Observatorio de Educación Superior</title>
+</head>
 
-    <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <p class="text">La educación superior es el principal camino para el desarrollo profesional, donde a través de ella existe un fuerte impacto económico, laboral, familiar, social y se incrementa el crecimiento profesional, así como las posibilidades y fuente de empleo, y con ello mejores condiciones de vida, comprobandose una gran diferencia entre lo que la cursan en un año avanzado o lo que se han graduado, en relación con lo que no han accedido a ella.
-        A nivel de zonas de riesgo social, la educación superior cuando se logra elevar en la población se reduce en gran proporción la pobreza y se fortalecen los valores, pues se obtienen herramientas tecnológicas y educativas que lo permiten.
-        <br>Al contar con un título universitario se cambia la proyección del futuro y del presente, pues ha logrado un alto nivel de especialización que le permite entrar a un mercado laboral en constante desarrollo y evolución, donde se decantan a los aspirantes que no lo han alcanzado.
-        
-        <br>Es por estas razones que hemos decidido realizar nuestro proyecto en torno a este tema, pues es necesario conocer los índices de población que actualmente pueden acceder a esta preparación, para así detectar focos rojos donde sea particularmente necesario el tomar acciones concretas para prevenir la deserción escolar y aumentar el número de egresados de educación superior universitaria.
-    </div>
-    
-    <div id="main">
-      <button class="openbtn" onclick="openNav()">☰ Observatorio de Educación Superior</button>  
-      <h2>Aqui va mapa</h2>
-      
-      
-    </div>
-   
-    
-    <script>
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "500px";
-      document.getElementById("main").style.marginLeft = "500px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-    }
-    </script>
+<body>
 
-    
-       
-    </body>
+
+
+  <div class="main">
+
+    <div id="sideBar" class="pre-scrollable border">
+      <span>
+        <h1 class="text">Observatorio de Educación Superior</h1>
+        <p class="text">La educación superior es el principal camino para el desarrollo profesional, donde a través de
+          ella existe un fuerte impacto económico, laboral, familiar, social y se incrementa el crecimiento profesional,
+          así como las posibilidades y fuente de empleo, y con ello mejores condiciones de vida, comprobandose una gran
+          diferencia entre lo que la cursan en un año avanzado o lo que se han graduado, en relación con lo que no han
+          accedido a ella.
+          A nivel de zonas de riesgo social, la educación superior cuando se logra elevar en la población se reduce en
+          gran proporción la pobreza y se fortalecen los valores, pues se obtienen herramientas tecnológicas y
+          educativas que lo permiten.
+          <br>
+          <br>Al contar con un título universitario se cambia la proyección del futuro y del presente, pues ha logrado
+          un alto nivel de especialización que le permite entrar a un mercado laboral en constante desarrollo y
+          evolución, donde se decantan a los aspirantes que no lo han alcanzado.
+
+          <br>
+          <br>Es por estas razones que hemos decidido realizar nuestro proyecto en torno a este tema, pues es necesario
+          conocer los índices de población que actualmente pueden acceder a esta preparación, para así detectar focos
+          rojos donde sea particularmente necesario el tomar acciones concretas para prevenir la deserción escolar y
+          aumentar el número de egresados de educación superior universitaria.
+        </p>
+        <hr width="70%" align="center">
+        <h3>
+          <em>Elaborado por:</em>
+          <br> Andrea Fernanda Moreno Manríquez
+          <br> Irlanda Ordóñez Kelly
+        </h3>
+
+      </span>
+    </div>
+
+
+    <div id="map_wrapper">
+      <div id="map" style='width: 100%; height: 100%;'></div>
+    </div>
+    <!-- empieza mapa -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""></script>
+      <script type="text/javascript" src="rezagoSoc.js"></script>
+      <script type="text/javascript" src="rezagoEdu.js"></script>
+      <script type="text/javascript" src="pobreza.js"></script>
+      <script type="text/javascript" src="publicas.js"></script>
+      <script type="text/javascript" src="privadas.js"></script>
+      <script type="text/javascript" src="map.js"></script>
+    <!-- termina mapa -->
+
+</body>
+
 </html>
