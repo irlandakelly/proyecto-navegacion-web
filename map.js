@@ -1,18 +1,18 @@
 // Capas base
 
-var map = L.map('map').setView([24.799119, -107.342517], 13);
+var map = L.map('map').setView([24.799119, -107.342517], 8);
 
 var satelite = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-    maxZoom: 8,
+    maxZoom: 20,
     subdomains:['mt0','mt1','mt2','mt3']
 })
 
 var hibrido = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',{
-    maxZoom: 8,
+    maxZoom: 20,
 })
 
 var mapa = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 8,
+    maxZoom: 20,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
